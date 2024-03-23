@@ -1,0 +1,8 @@
+nba:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../data/db/nba.duckdb
+      threads: 1
+      schema: nba

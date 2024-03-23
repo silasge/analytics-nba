@@ -1,0 +1,22 @@
+version: 2
+
+# external sources
+sources:
+  - name: game_logs
+    tables:
+      - name: team_game_logs
+        meta: 
+          external_location: "read_parquet('../data/raw/team_game_logs/team_game_logs.parquet')"
+  - name: boxscore_traditional
+    meta:
+        external_location: "read_parquet('../data/raw/boxscore_traditional/{name}.parquet')"
+    tables:
+      - name: bench
+      - name: players
+      - name: teams
+  - name: boxscore_advanced
+    meta:
+        external_location: "read_parquet('../data/raw/boxscore_advanced/{name}.parquet')"
+    tables:
+      - name: players
+      - name: teams
