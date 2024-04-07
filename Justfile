@@ -18,11 +18,15 @@ download:
     @{{ python }} -m nba.download
 
 run:
-    @{{ activate }} && cd dbt && dbt run
+    @{{ activate }}; cd dbt; dbt run
 
 query:
     @echo "Starting harlequin..."
-    @{{ python }} -m harlequin ./data/db/nba.duckdb
+    @{{ python }} -m harlequin -r ./data/db/nba.duckdb
 
 clean:
     @rm ./data/db/nba.duckdb
+
+all:
+    @just download
+    @just run

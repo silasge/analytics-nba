@@ -5,7 +5,7 @@ source as (
 ),
 
 renamed_source as (
-    select
+    select distinct
         SEASON_YEAR as season_year,
         SEASON_TYPE as season_type,
         GAME_ID::integer AS game_id,

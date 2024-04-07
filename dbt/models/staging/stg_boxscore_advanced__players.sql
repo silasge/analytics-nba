@@ -5,7 +5,7 @@ source as (
 ),
 
 renamed_source as (
-    select
+    select distinct
         gameID::integer as game_id,
         teamID as team_id,
         teamCity as team_city,
