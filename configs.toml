@@ -4,5 +4,5 @@ boxscore_traditional = "./data/raw/boxscore_traditional"
 boxscore_advanced = "./data/raw/boxscore_advanced"
 
 [params]
-season = ["2022-23", "2023-24"]
+season = ["2021-22", "2022-23", "2023-24"]
 season_type = ["Regular Season", "Playoffs"]
