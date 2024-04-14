@@ -9,3 +9,4 @@ loguru
 ipykernel
 harlequin
 uv
+pre-commit

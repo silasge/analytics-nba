@@ -20,7 +20,7 @@ renamed_source as (
         if(comment = '', 1, 0) as flg_played,
         jerseyNum as jersey_num,
         try_cast(
-            substring(minutes, 1, strpos(minutes, ':')-1) as int
+            substring(minutes, 1, strpos(minutes, ':') - 1) as int
         ) as minutes_played,
         fieldGoalsMade as field_goals_made,
         fieldGoalsAttempted as field_goals_attempted,

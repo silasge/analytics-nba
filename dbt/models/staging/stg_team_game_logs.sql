@@ -8,8 +8,8 @@ renamed_source as (
     select distinct
         SEASON_YEAR as season_year,
         SEASON_TYPE as season_type,
-        GAME_ID::integer AS game_id,
-        GAME_DATE AS game_date,
+        GAME_ID::integer as game_id,
+        GAME_DATE as game_date,
         TEAM_ID as team_id,
         TEAM_NAME as team_name,
         TEAM_ABBREVIATION as team_tricode,

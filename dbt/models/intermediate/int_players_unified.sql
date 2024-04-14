@@ -33,7 +33,16 @@ add_traditional_and_advanced_stats as (
         d.team_name as opp_team_name,
         c.home_away,
         c.win_lose,
+        a.person_id,
         a.player_name,
+        row_number() over (
+            partition by
+                c.season_year,
+                c.season_type,
+                a.person_id
+            order by
+                c.game_id
+        ) as player_game_number,
         a.flg_starter,
         a.flg_played,
         a.minutes_played,
@@ -67,17 +76,20 @@ add_traditional_and_advanced_stats as (
         {{ ref('stg_boxscore_traditional__players') }} as a
     left join
         {{ ref('stg_boxscore_advanced__players') }} as b
-        on a.game_id = b.game_id
-        and a.team_id = b.team_id
-        and a.person_id = b.person_id
+        on
+            a.game_id = b.game_id
+            and a.team_id = b.team_id
+            and a.person_id = b.person_id
     left join
         import_team_game_logs as c
-        on a.game_id = c.game_id
-        and a.team_id = c.team_id
+        on
+            a.game_id = c.game_id
+            and a.team_id = c.team_id
     left join
         import_team_game_logs as d
-        on a.game_id = d.game_id
-        and a.team_id <> d.team_id
+        on
+            a.game_id = d.game_id
+            and a.team_id <> d.team_id
 )
 
 select * from add_traditional_and_advanced_stats

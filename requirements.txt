@@ -18,6 +18,8 @@ certifi==2023.11.17
     #   requests
 cffi==1.16.0
     # via dbt-core
+cfgv==3.4.0
+    # via pre-commit
 charset-normalizer==3.3.2
     # via requests
 click==8.1.7
@@ -49,6 +51,8 @@ debugpy==1.8.1
     # via ipykernel
 decorator==5.1.1
     # via ipython
+distlib==0.3.8
+    # via virtualenv
 duckdb==0.10.1
     # via
     #   dbt-duckdb
@@ -56,9 +60,13 @@ duckdb==0.10.1
 executing==2.0.1
     # via stack-data
 fastparquet==2024.2.0
+filelock==3.13.4
+    # via virtualenv
 fsspec==2024.3.1
     # via fastparquet
 harlequin==1.16.0
+identify==2.5.35
+    # via pre-commit
 idna==3.6
     # via
     #   dbt-core
@@ -126,6 +134,8 @@ nest-asyncio==1.6.0
     # via ipykernel
 networkx==3.2.1
     # via dbt-core
+nodeenv==1.8.0
+    # via pre-commit
 numpy==1.26.4
     # via
     #   fastparquet
@@ -150,6 +160,8 @@ platformdirs==4.2.0
     #   harlequin
     #   jupyter-core
     #   shandy-sqlfmt
+    #   virtualenv
+pre-commit==3.7.0
 prompt-toolkit==3.0.36
     # via
     #   ipython
@@ -193,6 +205,7 @@ pyyaml==6.0.1
     # via
     #   dbt-core
     #   dbt-semantic-interfaces
+    #   pre-commit
 pyzmq==25.1.2
     # via
     #   ipykernel
@@ -218,6 +231,8 @@ rpds-py==0.18.0
     # via
     #   jsonschema
     #   referencing
+setuptools==69.5.1
+    # via nodeenv
 shandy-sqlfmt==0.21.2
     # via harlequin
 six==1.16.0
@@ -285,6 +300,8 @@ urllib3==1.26.18
     #   dbt-core
     #   requests
 uv==0.1.24
+virtualenv==20.25.1
+    # via pre-commit
 wcwidth==0.2.13
     # via prompt-toolkit
 win32-setctime==1.1.0

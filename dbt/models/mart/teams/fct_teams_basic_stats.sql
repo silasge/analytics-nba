@@ -16,7 +16,7 @@ select
     blocks,
     turnovers,
     fouls_personal,
-    -- running avg 10 days general
+    -- running avg 10 games
     avg(points) over teams_window as avg_points_10g,
     avg(rebounds_total) over teams_window as avg_rebounds_total_10g,
     avg(assists) over teams_window as avg_assists_10g,
